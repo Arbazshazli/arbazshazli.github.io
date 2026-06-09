@@ -65,7 +65,47 @@
     <a href="https://instagram.com/arbazali6244" class="btn" target="_blank">📸 Instagram</a>
     <a href="https://wa.me/923148226166" class="btn" target="_blank">💬 WhatsApp</a>
     <a href="https://youtube.com" class="btn" target="_blank">▶️ YouTube</a>
-    
+    <!-- ARBAZ LINK CHECKER TOOL - START -->
+<div style="max-width: 600px; margin: 40px auto; padding: 25px; border: 3px solid #e63946; border-radius: 15px; background: #fff5f5; box-shadow: 0 4px 8px rgba(0,0,0,0.1); font-family: Arial;">
+  <h2 style="color: #d00000; margin-top: 0; text-align: center;">🔍 Arbaz Link Checker Tool</h2>
+  <p style="text-align: center; color: #333; margin-bottom: 20px;">Khatarnak link check karo. Apne doston ko bachao.</p>
+  <input type="text" id="arbazLinkInput" placeholder="Yahan link paste karo... jaise https://chat-openai-free.tk" style="width: 100%; padding: 12px; border: 2px solid #ccc; border-radius: 8px; font-size: 16px; box-sizing: border-box; margin-bottom: 15px;">
+  <button onclick="arbazCheckLink()" style="width: 100%; padding: 12px; background: #e63946; color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer;">Check Karo</button>
+  <div id="arbazResult" style="margin-top: 20px; padding: 15px; border-radius: 8px; text-align: center; font-size: 16px; font-weight: bold; display: none;"></div>
+</div>
+
+<script>
+function arbazCheckLink() {
+  const link = document.getElementById('arbazLinkInput').value.toLowerCase();
+  const resultDiv = document.getElementById('arbazResult');
+  resultDiv.style.display = 'block';
+  
+  const khatraList = ['chat-openai-free.tk', 'zefoy.com', 'bit.ly/', 'tinyurl', 'grabify', 'iplogger'];
+  
+  let isKhatra = false;
+  for (let i = 0; i < khatraList.length; i++) {
+    if (link.includes(khatraList[i])) {
+      isKhatra = true;
+      break;
+    }
+  }
+  
+  if (link === '') {
+    resultDiv.style.background = '#fff3cd';
+    resultDiv.style.color = '#856404';
+    resultDiv.innerHTML = '⚠️ Pehle link to daalo bhai!';
+  } else if (isKhatra) {
+    resultDiv.style.background = '#f8d7da';
+    resultDiv.style.color = '#721c24';
+    resultDiv.innerHTML = '❌ KHATRA! Ye link safe nahi hai. Ispe click mat karna. IP chori ho sakti hai.';
+  } else {
+    resultDiv.style.background = '#d4edda';
+    resultDiv.style.color = '#155724';
+    resultDiv.innerHTML = '✅ Filhaal Safe Lag Raha Hai. Lekin phir bhi anjaan link pe dhyaan se click karna.';
+  }
+}
+</script>
+<!-- ARBAZ LINK CHECKER TOOL - END -->
     <p class="footer">© 2026 Arbaz Ali</p>
-</body>
-</html>
+</body>   
+</html>  
